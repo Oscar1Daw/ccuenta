@@ -4,8 +4,8 @@ public class Ccuenta {
 
 	    // Atributos de cuenta
 	    private String nombre;
-	    private String cuenta;
-	    private double saldo;
+	    private static String cuenta;
+	    private static double saldo;
 	    private double tipoInteres;
 
 
@@ -17,20 +17,13 @@ public class Ccuenta {
 	        saldo=sal;
 	    }
 
-	    public double getSaldo ()
-	    {
-	        return saldo;
-	    }
-
-	    //Para probar Junit
+	   //Para probar Junit
 	    public void ingresar(double cantidad) throws Exception
 	    {
 	        if (cantidad<0)
 	            throw new Exception("Cantidad negativa");
 	        saldo = saldo + cantidad;
 	    }
-
-
 
 	    //Para probar JUnit
 	    public void retirar (double cantidad) throws Exception
@@ -42,9 +35,38 @@ public class Ccuenta {
 	        saldo = saldo - cantidad;
 	    }
 
-	    // Mï¿½todo que me devuelve el nï¿½mero de cuenta
-	    public String getCuenta ()
+	    // Método que me devuelve el número de cuenta
+	    public static String getCuenta ()
 	    {
 	        return cuenta;
 	    }
+
+		public String getNombre() {
+			return nombre;
+		}
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+		public double getTipoInteres() {
+			return tipoInteres;
+		}
+
+		public void setTipoInteres(double tipoInteres) {
+			this.tipoInteres = tipoInteres;
+		}
+
+		public void setCuenta(String cuenta) {
+			this.cuenta = cuenta;
+		}
+
+		public void setSaldo(double saldo) {
+			this.saldo = saldo;
+		}
+		
+		 public static double getSaldo (){
+			 
+		        return saldo;
+		    }
 	}
