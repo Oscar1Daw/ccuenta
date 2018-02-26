@@ -34,6 +34,7 @@ public class CcuentaTestOQC{
 	
 	//4
 	@Test
+	(expected=Exception.class)
 	public void testIngresarNegativoOQC() throws Exception{
 		miCuenta.ingresar(-600);
 		assertEquals(3200, Ccuenta.getSaldo(),0);
@@ -41,6 +42,7 @@ public class CcuentaTestOQC{
 	
 	//6
 	@Test
+	(expected=Exception.class)
 	public void testRetirarDemasidoOQC() throws Exception{
 		miCuenta.retirar(4000);
 		assertEquals(3200, Ccuenta.getSaldo(),0);
